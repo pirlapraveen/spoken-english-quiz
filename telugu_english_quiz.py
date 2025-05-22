@@ -99,27 +99,90 @@ sentences = [
     ("నీవు ఈ రోజు ఎక్కడికి వెళ్ళవలసి ఉంది?", "Where do you have to go today?")
 ]
 
-# Streamlit App
-st.set_page_config(page_title="Telugu-English Practice", page_icon="📘")
-st.title("📘 Telugu-English Translation Practice")
+# Set up page
+st.set_page_config(page_title="Praveen Spoken English", page_icon="🗣", layout="centered")
 
-# Keep a persistent selected sentence
-if "current_sentence" not in st.session_state:
-    st.session_state.current_sentence = random.choice(sentences)
+# Title and welcome message
+st.title("🗣 Welcome to Praveen Spoken English")
+st.markdown("### Learn English through Telugu with ease and confidence!")
 
-telugu, english = st.session_state.current_sentence
+# Initialize page navigation state
+if "page" not in st.session_state:
+    st.session_state.page = "home"
 
-# Display Telugu sentence
-st.markdown("### 👉 Telugu Sentence:")
-st.write(telugu)
-
-# Reveal translation
-if st.button("🔔 Show English Translation"):
-    st.markdown("### ✅ English Translation:")
-    st.write(english)
-
-# Button to load next question
-if st.button("🔄 Next Sentence"):
-    st.session_state.current_sentence = random.choice(sentences)
+# Navigation logic
+def go_to(page_name):
+    st.session_state.page = page_name
     st.rerun()
 
+# Home page
+if st.session_state.page == "home":
+    st.markdown("Choose what you want to do:")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        if st.button("🗣 Practice English"):
+            go_to("practice")
+    with col2:
+        if st.button("📘 Understand Tense"):
+            go_to("tense")
+    with col3:
+        if st.button("🔤 Learn Verbs"):
+            go_to("verbs")
+
+# Practice English Page
+elif st.session_state.page == "practice":
+    st.header("🗣 Telugu-English Translation Practice")
+
+    if "current_sentence" not in st.session_state:
+        st.session_state.current_sentence = random.choice(sentences)
+        st.session_state.show_answer = False
+        st.session_state.feedback = ""
+
+    telugu, english = st.session_state.current_sentence
+
+    st.markdown("### 👉 Translate the following Telugu sentence to English:")
+    st.write(f"**{telugu}**")
+
+    user_input = st.text_input("✍️ Your English Translation:")
+
+    if st.button("✅ Check Answer"):
+        if user_input.strip().lower() == english.lower():
+            st.session_state.feedback = "✅ Correct!"
+        else:
+            st.session_state.feedback = "❌ Incorrect!"
+
+    if st.session_state.feedback:
+        st.subheader(st.session_state.feedback)
+
+    if st.button("👁️ Show Answer"):
+        st.session_state.show_answer = True
+
+    if st.session_state.show_answer:
+        st.markdown("### ✅ Correct Translation:")
+        st.write(english)
+
+    if st.button("🔄 Next Sentence"):
+        st.session_state.current_sentence = random.choice(sentences)
+        st.session_state.show_answer = False
+        st.session_state.feedback = ""
+        st.rerun()
+
+    st.markdown("---")
+    if st.button("🏠 Back to Home"):
+        go_to("home")
+
+# Understand Tense Page
+elif st.session_state.page == "tense":
+    st.header("📘 Understand Tenses")
+    st.markdown("This section will help you understand different tenses with examples.")
+    st.info("Coming soon: Simple Present, Past, Future, Perfect, and Continuous Tenses.")
+    if st.button("🏠 Back to Home"):
+        go_to("home")
+
+# Learn Verbs Page
+elif st.session_state.page == "verbs":
+    st.header("🔤 Learn Verbs")
+    st.markdown("Here you will learn important verbs in English and their Telugu meanings.")
+    st.info("Coming soon: Common verbs list and usage examples.")
+    if st.button("🏠 Back to Home"):
+        go_to("home")
