@@ -91,6 +91,101 @@ tense_sentences = {
         ("నీవు నిన్న ఆఫీసుకు వెళ్లాలనుకోలేదా?", "Didn't you want to go to office yesterday?"),
         ("నీవు నిన్న ఆఫీసుకు ఎందుకు వెళ్లాలనుకోలేదు?", "Why didn't you want to go to office yesterday?")
     ],
+    "Present Be Forms": [
+    ("ఆమె ఈ రోజు చెన్నైలో ఉంది.", "She is in Chennai today."),
+    ("ఆమె ఈ రోజు చెన్నైలో ఉందా?", "Is she in Chennai today?"),
+    ("ఆమె ఈ రోజు చెన్నైలో ఎందుకు ఉంది?", "Why is she in Chennai today?"),
+    ("ఆమె ఈ రోజు చెన్నైలో లేదు.", "She is not in Chennai today."),
+    ("ఆమె ఈ రోజు చెన్నైలో లేడా?", "Isn't she in Chennai today?"),
+
+    ("అతను ఈ రోజు చెన్నైలో ఉన్నాడు.", "He is in Chennai today."),
+    ("అతను ఈ రోజు చెన్నైలో ఉన్నాడా?", "Is he in Chennai today?"),
+    ("అతను ఈ రోజు చెన్నైలో ఎందుకు ఉన్నాడు?", "Why is he in Chennai today?"),
+    ("అతను ఈ రోజు చెన్నైలో లేడు.", "He is not in Chennai today."),
+    ("అతను ఈ రోజు చెన్నైలో లేడా?", "Isn't he in Chennai today?"),
+
+    ("వారు ఈ రోజు చెన్నైలో ఉన్నారు.", "They are in Chennai today."),
+    ("వారు ఈ రోజు చెన్నైలో ఉన్నారా?", "Are they in Chennai today?"),
+    ("వారు ఈ రోజు చెన్నైలో ఎందుకు ఉన్నారు?", "Why are they in Chennai today?"),
+    ("వారు ఈ రోజు చెన్నైలో లేరు.", "They are not in Chennai today."),
+    ("వారు ఈ రోజు చెన్నైలో లేరా?", "Aren't they in Chennai today?"),
+
+    ("మేము ఈ రోజు చెన్నైలో ఉన్నాము.", "We are in Chennai today."),
+    ("మేము ఈ రోజు చెన్నైలో ఉన్నామా?", "Are we in Chennai today?"),
+    ("మేము ఈ రోజు చెన్నైలో ఎందుకు ఉన్నాము?", "Why are we in Chennai today?"),
+    ("మేము ఈ రోజు చెన్నైలో లేము.", "We are not in Chennai today."),
+    ("మేము ఈ రోజు చెన్నైలో లేమా?", "Aren't we in Chennai today?"),
+
+    ("నేను ఈ రోజు చెన్నైలో ఉన్నాను.", "I am in Chennai today."),
+    ("నేను ఈ రోజు చెన్నైలో ఉన్నానా?", "Am I in Chennai today?"),
+    ("నేను ఈ రోజు చెన్నైలో ఎందుకు ఉన్నాను?", "Why am I in Chennai today?"),
+    ("నేను ఈ రోజు చెన్నైలో లేను.", "I am not in Chennai today."),
+    ("నేను ఈ రోజు చెన్నైలో లేననా?", "Aren’t I in Chennai today?")
+    ],
+    "Past Be Forms": [
+    ("ఆమె నిన్న చెన్నైలో ఉండింది.", "She was in Chennai yesterday."),
+    ("ఆమె నిన్న చెన్నైలో ఉండిందా?", "Was she in Chennai yesterday?"),
+    ("ఆమె నిన్న చెన్నైలో ఎందుకు ఉండింది?", "Why was she in Chennai yesterday?"),
+    ("ఆమె నిన్న చెన్నైలో లేదు.", "She was not in Chennai yesterday."),
+    ("ఆమె నిన్న చెన్నైలో లేడా?", "Wasn't she in Chennai yesterday?"),
+
+    ("అతను నిన్న చెన్నైలో ఉన్నాడు.", "He was in Chennai yesterday."),
+    ("అతను నిన్న చెన్నైలో ఉన్నాడా?", "Was he in Chennai yesterday?"),
+    ("అతను నిన్న చెన్నైలో ఎందుకు ఉన్నాడు?", "Why was he in Chennai yesterday?"),
+    ("అతను నిన్న చెన్నైలో లేడు.", "He was not in Chennai yesterday."),
+    ("అతను నిన్న చెన్నైలో లేడా?", "Wasn't he in Chennai yesterday?"),
+
+    ("వారు నిన్న చెన్నైలో ఉన్నారు.", "They were in Chennai yesterday."),
+    ("వారు నిన్న చెన్నైలో ఉన్నారా?", "Were they in Chennai yesterday?"),
+    ("వారు నిన్న చెన్నైలో ఎందుకు ఉన్నారు?", "Why were they in Chennai yesterday?"),
+    ("వారు నిన్న చెన్నైలో లేరు.", "They were not in Chennai yesterday."),
+    ("వారు నిన్న చెన్నైలో లేరా?", "Weren't they in Chennai yesterday?"),
+
+    ("మేము నిన్న చెన్నైలో ఉన్నాము.", "We were in Chennai yesterday."),
+    ("మేము నిన్న చెన్నైలో ఉన్నామా?", "Were we in Chennai yesterday?"),
+    ("మేము నిన్న చెన్నైలో ఎందుకు ఉన్నాము?", "Why were we in Chennai yesterday?"),
+    ("మేము నిన్న చెన్నైలో లేము.", "We were not in Chennai yesterday."),
+    ("మేము నిన్న చెన్నైలో లేమా?", "Weren't we in Chennai yesterday?"),
+
+    ("నేను నిన్న చెన్నైలో ఉన్నాను.", "I was in Chennai yesterday."),
+    ("నేను నిన్న చెన్నైలో ఉన్నానా?", "Was I in Chennai yesterday?"),
+    ("నేను నిన్న చెన్నైలో ఎందుకు ఉన్నాను?", "Why was I in Chennai yesterday?"),
+    ("నేను నిన్న చెన్నైలో లేను.", "I was not in Chennai yesterday."),
+    ("నేను నిన్న చెన్నైలో లేననా?", "Wasn't I in Chennai yesterday?")
+    ],
+    "Future Be Forms": [
+    ("ఆమె రేపు చెన్నైలో ఉంటారు.", "She will be in Chennai tomorrow."),
+    ("ఆమె రేపు చెన్నైలో ఉంటుందా?", "Will she be in Chennai tomorrow?"),
+    ("ఆమె రేపు చెన్నైలో ఎందుకు ఉంటారు?", "Why will she be in Chennai tomorrow?"),
+    ("ఆమె రేపు చెన్నైలో ఉండదు.", "She will not be in Chennai tomorrow."),
+    ("ఆమె రేపు చెన్నైలో ఉండదా?", "Won't she be in Chennai tomorrow?"),
+
+    ("అతను రేపు చెన్నైలో ఉంటాడు.", "He will be in Chennai tomorrow."),
+    ("అతను రేపు చెన్నైలో ఉంటాడా?", "Will he be in Chennai tomorrow?"),
+    ("అతను రేపు చెన్నైలో ఎందుకు ఉంటాడు?", "Why will he be in Chennai tomorrow?"),
+    ("అతను రేపు చెన్నైలో ఉండడు.", "He will not be in Chennai tomorrow."),
+    ("అతను రేపు చెన్నైలో ఉండడా?", "Won't he be in Chennai tomorrow?"),
+
+    ("వారు రేపు చెన్నైలో ఉంటారు.", "They will be in Chennai tomorrow."),
+    ("వారు రేపు చెన్నైలో ఉంటారా?", "Will they be in Chennai tomorrow?"),
+    ("వారు రేపు చెన్నైలో ఎందుకు ఉంటారు?", "Why will they be in Chennai tomorrow?"),
+    ("వారు రేపు చెన్నైలో ఉండరు.", "They will not be in Chennai tomorrow."),
+    ("వారు రేపు చెన్నైలో ఉండరా?", "Won't they be in Chennai tomorrow?"),
+
+    ("మేము రేపు చెన్నైలో ఉంటాము.", "We will be in Chennai tomorrow."),
+    ("మేము రేపు చెన్నైలో ఉంటామా?", "Will we be in Chennai tomorrow?"),
+    ("మేము రేపు చెన్నైలో ఎందుకు ఉంటాము?", "Why will we be in Chennai tomorrow?"),
+    ("మేము రేపు చెన్నైలో ఉండము.", "We will not be in Chennai tomorrow."),
+    ("మేము రేపు చెన్నైలో ఉండమా?", "Won't we be in Chennai tomorrow?"),
+
+    ("నేను రేపు చెన్నైలో ఉంటాను.", "I will be in Chennai tomorrow."),
+    ("నేను రేపు చెన్నైలో ఉంటానా?", "Will I be in Chennai tomorrow?"),
+    ("నేను రేపు చెన్నైలో ఎందుకు ఉంటాను?", "Why will I be in Chennai tomorrow?"),
+    ("నేను రేపు చెన్నైలో ఉండను.", "I will not be in Chennai tomorrow."),
+    ("నేను రేపు చెన్నైలో ఉండనా?", "Won't I be in Chennai tomorrow?")
+    ],
+
+
     "Have to": [
         ("నీవు ఈ రోజు ఆఫీసుకు వెళ్ళవలసి ఉంది.", "You have to go to office today."),
         ("నీవు ఈ రోజు ఆఫీసుకు వెళ్ళవలసి ఉందా?", "Do you have to go to office today?"),
