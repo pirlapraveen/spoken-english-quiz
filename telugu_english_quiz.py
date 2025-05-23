@@ -203,11 +203,46 @@ tense_info = {
 }
 
 # Set up page
-st.set_page_config(page_title="Praveen Spoken English", page_icon="🗣", layout="centered")
+#st.set_page_config(page_title="Praveen Spoken English", page_icon="🗣", layout="centered")
 
 # Title and welcome message
-st.title("🗣 Welcome to Praveen Spoken English")
-st.markdown("### Learn English through Telugu with ease and confidence!")
+#st.title("🗣 Welcome to Praveen Spoken English")
+#st.markdown("### Learn English through Telugu with ease and confidence!")
+
+import streamlit as st
+
+# Set page title
+st.set_page_config(page_title="Praveen Spoken English", layout="centered")
+
+# Custom CSS for blinking text
+st.markdown("""
+    <style>
+    .blinking-text {
+        animation: blinker 1.5s linear infinite;
+        color: #007ACC;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .phone-number {
+        font-size: 20px;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+    }
+    </style>
+
+    <div class="blinking-text">Welcome to Praveen Spoken English</div>
+    <div class="phone-number">📞 Contact: 8248268056</div>
+""", unsafe_allow_html=True)
 
 # Initialize page navigation state
 if "page" not in st.session_state:
