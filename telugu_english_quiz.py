@@ -358,7 +358,7 @@ def go_to(page_name):
 # Home page
 if st.session_state.page == "home":
     st.markdown("Choose what you want to do:")
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         if st.button("🗣 Practice All Tenses"):
             go_to("practice")
@@ -368,9 +368,12 @@ if st.session_state.page == "home":
     with col3:
         if st.button("🔤 Learn Verbs"):
             go_to("verbs")
-    with col3:
+    with col4:
         if st.button("🔤 Learn and practise conjunctions"):
             go_to("conjunctions")
+    with col5:
+        if st.button("🔤 understand conjunctions"):
+            go_to("understand_conjunctions")
 
 # Practice English Page (all tenses)
 elif st.session_state.page == "practice":
@@ -504,6 +507,78 @@ elif st.session_state.page == "tense_wise":
         st.session_state[f"{tense}_show_answer"] = False
         st.session_state[f"{tense}_feedback"] = ""
         st.rerun()
+
+    if st.button("🏠 Back to Home"):
+        go_to("home")
+
+
+# Understand conjunctions
+elif st.session_state.page == "understand_conjunctions":
+    st.header("\U0001F4D8 understand conjunctions")
+
+    st.markdown("""
+    ### 📘 Conjunctions – Full Guide (with Telugu Meaning & Examples)
+
+    #### 🔹 1. Coordinating Conjunctions (FANBOYS)
+    Connect equal parts: words, phrases, or independent clauses.
+
+    | Conjunction | Use     | English Example                          | Telugu Meaning | Telugu Example                                     |
+    |-------------|----------|------------------------------------------|----------------|----------------------------------------------------|
+    | For         | Reason   | He stayed home, for he was sick.         | ఎందుకంటే       | అతను ఇంట్లోనే ఉన్నాడు, ఎందుకంటే అతను అనారోగ్యంగా ఉన్నాడు. |
+    | And         | Addition | I like coffee and tea.                   | మరియు          | నాకు కాఫీ మరియు టీ ఇష్టం.                        |
+    | Nor         | Neg Add  | She didn’t smile, nor did she speak.     | కూడా కాదు       | ఆమె నవ్వలేదు, మరియు మాట్లాడలేదు కూడా.           |
+    | But         | Contrast | I ran fast, but I missed the bus.        | కానీ            | నేను వేగంగా పరుగెత్తాను, కానీ బస్సు మిస్సయ్యాను.   |
+    | Or          | Choice   | Do you want juice or soda?               | లేదా            | నీకు జ్యూస్ కావాలా లేదా సోడా?                    |
+    | Yet         | Unexpected | It’s cold, yet he isn’t wearing a coat. | అయినా          | ఇది చల్లగా ఉంది, అయినా అతను కోట్ వేసుకోలేదు.      |
+    | So          | Result   | It rained, so we stayed in.              | కాబట్టి          | వర్షం పడింది, కాబట్టి మేము ఇంట్లో ఉన్నాము.       |
+
+    #### 🔹 2. Subordinating Conjunctions
+    Connect an independent clause with a dependent clause.
+
+    | Conjunction  | Use/Meaning     | English Example                          | Telugu Meaning    | Telugu Example                                           |
+    |--------------|-----------------|------------------------------------------|-------------------|----------------------------------------------------------|
+    | Because      | Reason          | I stayed because it rained.              | ఎందుకంటే         | వర్షం పడింది కాబట్టి నేను ఉన్నాను.                      |
+    | Although     | Contrast        | Although he's rich, he is unhappy.       | అయినా             | అతను ధనవంతుడు అయినా సంతోషంగా లేడు.                     |
+    | Since        | Reason/Time     | Since it’s late, let’s go.               | కాబట్టి / నుంచి     | ఇది ఆలస్యంగా ఉంది కాబట్టి మనం వెళ్లాలి.                 |
+    | If           | Condition       | If you try, you’ll win.                  | అయితే / యెడల       | నీవు ప్రయత్నిస్తే, నీవు గెలుస్తావు.                      |
+    | Unless       | Negative Cond.  | Unless you study, you’ll fail.           | లేకపోతే / చదవకపోతే | నీవు చదవకపోతే నీవు ఫెయిల్ అవుతావు.                     |
+    | While        | Time/Contrast   | I listened while she spoke.              | చేస్తున్నప్పుడు       | ఆమె మాట్లాడుతున్నప్పుడు నేను విన్నాను.                 |
+    | After        | Time            | I slept after I ate.                     | తరువాత            | తినిన తరువాత నిద్రపోయాను.                             |
+    | Before       | Time            | Wash your hands before you eat.          | ముందు             | తినే ముందు చేతులు కడుక్కో.                           |
+    | Though       | Contrast        | Though tired, he worked.                 | అయినా             | అలసిపోయినా, అతను పని చేశాడు.                         |
+    | As           | Time/Reason     | As I was leaving, she came.              | చేస్తున్నప్పుడు / కాబట్టి | నేను వెళ్లుతున్నపుడు ఆమె వచ్చింది.                 |
+    | Even if      | Condition       | Even if it rains, we’ll go.              | అయినప్పటికీ        | వర్షం పడినప్పటికీ మేము వెళ్తాము.                      |
+    | In case      | Precaution      | Take an umbrella in case it rains.       | అన్న ఊహలో         | వర్షం పడితే అన్న ఊహలో గొడుగు తీసుకెళ్లి.               |
+    | As long as   | Condition       | You can stay as long as you’re quiet.    | ఉన్నంతవరకూ         | నీవు నిశ్శబ్దంగా ఉన్నంతవరకూ నీవు ఉండవచ్చు.               |
+    | Now that     | Present Reason  | Now that it’s over, we can rest.         | ఇప్పుడు కావడంతో     | ఇది అయిపోయిందని ఇప్పుడు విశ్రాంతి తీసుకుందాం.           |
+    | Even though  | Strong contrast | Even though he’s old, he works hard.     | అయినప్పటికీ        | అతను వృద్ధుడైనా, కష్టపడుతూ పని చేస్తాడు.               |
+    | Provided that| Formal Cond.    | You may go provided that you finish work.| పని పూర్తిచేస్తే     | నీవు పని పూర్తిచేస్తే నీవు వెళ్ళవచ్చు.                  |
+    | As if        | Imagination     | He talks as if he were a king.           | లాగా / అయినట్టు    | అతను రాజులా మాట్లాడుతున్నాడు.                          |
+
+    #### 🔹 3. Correlative Conjunctions
+    Conjunction pairs that work together.
+
+    | Pair                  | English Example                       | Telugu Meaning       | Telugu Example                                 |
+    |-----------------------|----------------------------------------|----------------------|------------------------------------------------|
+    | Either...or           | Either come or call.                  | లేకపోతే...లేదా       | నీవు రా లేకపోతే ఫోన్ చెయ్యి.                      |
+    | Neither...nor         | Neither the boy nor the girl spoke.  | కాదు...లేదు           | అబ్బాయి కాదు, అమ్మాయి కూడా లేదు.                  |
+    | Not only...but also   | Not only smart but also kind.        | మాత్రమే కాదు...కూడా  | ఆమె తెలివైనదే కాదు, మంచిదీ కూడా.                    |
+    | Both...and            | Both father and son are doctors.     | ఇద్దరూ...మరియు        | తండ్రి మరియు కొడుకు ఇద్దరూ డాక్టర్లు.              |
+    | Whether...or          | Whether it rains or not, we’ll play. | అయినా...లేదా         | వర్షం పడినా లేదా పడకపోయినా మేము ఆడతాము.          |
+
+    #### 🔹 4. Conjunctive Adverbs / Phrase Conjunctions
+    These are transition words that act like conjunctions, especially in formal or written English.
+
+    | Phrase Conjunction | Use       | English Example                           | Telugu Meaning       |
+    |---------------------|------------|-------------------------------------------|-----------------------|
+    | However             | Contrast   | He was tired; however, he continued.      | అయినప్పటికీ         |
+    | Therefore           | Result     | She studied well; therefore, she passed.  | కాబట్టి               |
+    | Moreover            | Addition   | He is kind; moreover, he is generous.     | అంతేకాకుండా          |
+    | Nevertheless        | Contrast   | It rained; nevertheless, we went out.     | అయినా                |
+    | Consequently        | Result     | He missed the train; consequently, he was late. | ఫలితంగా     |
+    | Furthermore          | Addition   | She is a writer; furthermore, a good speaker. | అదనంగా / అంతేకాకుండా |
+    """)
+
 
     if st.button("🏠 Back to Home"):
         go_to("home")
