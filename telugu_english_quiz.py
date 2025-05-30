@@ -1,6 +1,35 @@
 import random
 import streamlit as st
 
+# ✅ THIS MUST BE FIRST Streamlit command
+st.set_page_config(page_title="Praveen Spoken English", layout="centered")
+
+# Initialize session state page
+if "page" not in st.session_state:
+    st.session_state.page = "home"
+
+# Sidebar navigation only for non-home pages
+if st.session_state.page != "home":
+    with st.sidebar:
+        st.markdown("### 📚 Go to section")
+        if st.button("🏠 Home"):
+            st.session_state.page = "home"
+        if st.button("🗣 Practice All Tenses"):
+            st.session_state.page = "practice"
+        if st.button("📘 Tense-wise Understand & Practice"):
+            st.session_state.page = "tense_wise"
+        if st.button("🔤 Learn Verbs"):
+            st.session_state.page = "verbs"
+        if st.button("🔗 Practise Conjunctions"):
+            st.session_state.page = "conjunctions"
+        if st.button("🔍 Understand Conjunctions"):
+            st.session_state.page = "understand_conjunctions"
+
+
+
+
+
+
 # Sentence bank organized by tense
 tense_sentences = {
     "Simple Present": [
@@ -734,23 +763,20 @@ tense_info = {
 
 }
 
-# Set up page
-#st.set_page_config(page_title="Praveen Spoken English", page_icon="🗣", layout="centered")
+
 
 # Title and welcome message
 #st.title("🗣 Welcome to Praveen Spoken English")
 #st.markdown("### Learn English through Telugu with ease and confidence!")
 
-import streamlit as st
 
-# Set page title
-st.set_page_config(page_title="Praveen Spoken English", layout="centered")
+
 
 # Custom CSS for blinking text
 st.markdown("""
     <style>
     .blinking-text {
-        animation: blinker 1.5s linear infinite;
+        animation: blinker 2s linear infinite;
         color: #007ACC;
         font-size: 32px;
         font-weight: bold;
@@ -786,24 +812,26 @@ def go_to(page_name):
     st.rerun()
 
 # Home page
+# Home page
 if st.session_state.page == "home":
     st.markdown("Choose what you want to do:")
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        if st.button("🗣 Practice All Tenses"):
+        if st.button("🗣 Practice All Tenses", key="home_practice"):
             go_to("practice")
     with col2:
-        if st.button("📘 Tense-wise Understand & Practice"):
+        if st.button("📘 Tense-wise Understand & Practice", key="home_tense_wise"):
             go_to("tense_wise")
     with col3:
-        if st.button("🔤 Learn Verbs"):
+        if st.button("🔤 Learn Verbs", key="home_verbs"):
             go_to("verbs")
     with col4:
-        if st.button("🔤 Learn and practise conjunctions"):
+        if st.button("🔤 Learn and practise conjunctions", key="home_conjunctions"):
             go_to("conjunctions")
     with col5:
-        if st.button("🔤 understand conjunctions"):
+        if st.button("🔤 understand conjunctions", key="home_understand_conjunctions"):
             go_to("understand_conjunctions")
+
 
 # Practice English Page (all tenses)
 elif st.session_state.page == "practice":
@@ -845,9 +873,7 @@ elif st.session_state.page == "practice":
         st.session_state.feedback = ""
         st.rerun()
 
-    st.markdown("---")
-    if st.button("🏠 Back to Home"):
-        go_to("home")
+    
 
 # Practice English Page (conjunctions)
 elif st.session_state.page == "conjunctions":
@@ -889,9 +915,7 @@ elif st.session_state.page == "conjunctions":
         st.session_state.feedback = ""
         st.rerun()
 
-    st.markdown("---")
-    if st.button("🏠 Back to Home"):
-        go_to("home")
+    
 
 # Tense-wise Understand & Practice
 elif st.session_state.page == "tense_wise":
@@ -938,9 +962,7 @@ elif st.session_state.page == "tense_wise":
         st.session_state[f"{tense}_feedback"] = ""
         st.rerun()
 
-    if st.button("🏠 Back to Home"):
-        go_to("home")
-
+    
 
 # Understand conjunctions
 elif st.session_state.page == "understand_conjunctions":
@@ -1010,13 +1032,11 @@ elif st.session_state.page == "understand_conjunctions":
     """)
 
 
-    if st.button("🏠 Back to Home"):
-        go_to("home")
+    
 
 # Learn Verbs Page
 elif st.session_state.page == "verbs":
     st.header("🔤 Learn Verbs")
     st.markdown("Here you will learn important verbs in English and their Telugu meanings.")
     st.info("Coming soon: Common verbs list and usage examples.")
-    if st.button("🏠 Back to Home"):
-        go_to("home")
+    
