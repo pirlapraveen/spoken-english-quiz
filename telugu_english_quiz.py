@@ -59,7 +59,7 @@ st.markdown(
 # Login credentials
 credentials = {
     "admin": "admin123",
-    "user1": "pass1"
+    "greeshma": "greeshma@767"
 }
 
 # Initialize login session state
