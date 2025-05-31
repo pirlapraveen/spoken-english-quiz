@@ -7,6 +7,36 @@ from data.conjunction_sentences import conjunction_sentences
 # ✅ THIS MUST BE FIRST Streamlit command
 st.set_page_config(page_title="Praveen Spoken English", layout="centered")
 
+
+# Login credentials
+credentials = {
+    "admin": "admin123",
+    "user1": "pass1"
+}
+
+# Initialize login session state
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+# Login form
+if not st.session_state.logged_in:
+    st.title("🔐 Login to Praveen Spoken English")
+
+    with st.form("login_form"):
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        submitted = st.form_submit_button("Login")
+
+        if submitted:
+            if username in credentials and credentials[username] == password:
+                st.session_state.logged_in = True
+                st.success("Login successful!")
+                st.rerun()
+            else:
+                st.error("Invalid username or password")
+    st.stop()
+
+
 # Initialize session state page
 if "page" not in st.session_state:
     st.session_state.page = "home"
