@@ -9,6 +9,33 @@ st.set_page_config(page_title="Praveen Spoken English", layout="centered")
 
 st.markdown("""
 <style>
+/* Buttons with black background, white text, padding, and border radius */
+.stButton > button {
+    background-color: #000000 !important;  /* black bg */
+    color: #ffffff !important;             /* white text */
+    padding: 10px 20px !important;         /* bigger padding */
+    font-size: 16px !important;            /* larger font */
+    border-radius: 8px !important;         /* rounded corners */
+    border: none !important;                /* no border */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3) !important; /* subtle shadow */
+    transition: background-color 0.3s ease !important; /* smooth hover */
+}
+
+/* Hover effect: slightly lighter black */
+.stButton > button:hover {
+    background-color: #222222 !important;
+}
+
+/* Optional: add some margin below buttons for spacing */
+.stButton {
+    margin-bottom: 12px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
 input, textarea {
   color: black !important;
   background-color: white !important;
