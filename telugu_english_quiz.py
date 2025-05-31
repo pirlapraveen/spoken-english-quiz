@@ -3,6 +3,7 @@ import streamlit as st
 from data.tense_sentences import tense_sentences
 from data.conjunction_sentences import conjunction_sentences
 from data.verb_data import verbs
+from data.verb_data import verb_dicts 
 
 
 # ✅ THIS MUST BE FIRST Streamlit command
@@ -488,27 +489,30 @@ elif st.session_state.page == "verbs":
     with col2:
         prefix_search = st.text_input("🔍 Search verbs starting with (e.g., g)", key="prefix_search")
 
-    # Filter logic
-    filtered_verbs = verbs
+    # ✅ Use the dictionary list
+    filtered_verbs = verb_dicts
 
     if exact_search:
         filtered_verbs = [v for v in filtered_verbs if v['v1'].lower() == exact_search.lower()]
     elif prefix_search:
         filtered_verbs = [v for v in filtered_verbs if v['v1'].lower().startswith(prefix_search.lower())]
 
-    # Show matching verbs
     if not filtered_verbs:
         st.info("No verbs found.")
     else:
-        for verb in filtered_verbs:
-            st.markdown(f"""
-            #### ✅ {verb['v1'].capitalize()} — {verb['v2']} — {verb['v3']} — {verb['ing']} — {verb['telugu_meaning']}
+    	for verb in filtered_verbs:
+            v1 = verb.get('v1', '')
+            v2 = verb.get('v2', '')
+            v3 = verb.get('v3', '')
+            ing = verb.get('ing', '')
+            meaning = verb.get('telugu_meaning', '')
+            example_en = verb.get('example_en', '')
+            example_te = verb.get('example_te', '')
 
-            - **Example (EN)**: {verb['example_en']}
-            - **ఉదాహరణ (TE)**: {verb['example_te']}
+            st.markdown(f"""
+            #### ✅ {v1.capitalize()} — {v2} — {v3} — {ing} — {meaning}
+
+            - **Example (EN)**: {example_en}
+            - **ఉదాహరణ (TE)**: {example_te}
             """)
             st.divider()
-
-
-
-    

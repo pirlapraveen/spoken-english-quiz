@@ -221,7 +221,7 @@ verbs = [
     Verb("accommodate", "accommodated", "accommodated", "accommodating", "సౌకర్యం కల్పించు", "I accommodate the task every day.", "నేను ప్రతి రోజు పని సౌకర్యం కల్పించు చేస్తాను."),
     Verb("accredit", "accredited", "accredited", "accrediting", "అంగీకరించు", "I accredit the task every day.", "నేను ప్రతి రోజు పని అంగీకరించు చేస్తాను."),
     Verb("accustom", "accustomed", "accustomed", "accustoming", "అభ్యాసం చేయు", "I accustom the task every day.", "నేను ప్రతి రోజు పని అభ్యాసం చేయు చేస్తాను."),
-    Verb("acknowledge", "acknowledged", "acknowledged", "acknowledging", "ఒప్పుకో", "I acknowledge the task every day.", "నేను ప్రతి రోజు పని ఒప్పుకో చేస్తాను."),
+    Verb("acknowledge", "acknowledged", "acknowledged", "acknowledging", "ఒప్పుకో", "I acknowledge the task every day.", "నేను ప్రతి రోజు పని ఒప్పుకో చేస్తాను"),
 ]
 
 
