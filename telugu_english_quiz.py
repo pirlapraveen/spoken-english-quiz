@@ -2,6 +2,7 @@ import random
 import streamlit as st
 from data.tense_sentences import tense_sentences
 from data.conjunction_sentences import conjunction_sentences
+from data.verb_data import verbs
 
 
 # ✅ THIS MUST BE FIRST Streamlit command
@@ -477,6 +478,37 @@ elif st.session_state.page == "understand_conjunctions":
 # Learn Verbs Page
 elif st.session_state.page == "verbs":
     st.header("🔤 Learn Verbs")
-    st.markdown("Here you will learn important verbs in English and their Telugu meanings.")
-    st.info("Coming soon: Common verbs list and usage examples.")
+    st.markdown("### Browse verb forms with Telugu meaning and examples")
+
+    # Add two search boxes side by side
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        exact_search = st.text_input("🔍 Search exact verb (e.g., go)", key="exact_search")
+    with col2:
+        prefix_search = st.text_input("🔍 Search verbs starting with (e.g., g)", key="prefix_search")
+
+    # Filter logic
+    filtered_verbs = verbs
+
+    if exact_search:
+        filtered_verbs = [v for v in filtered_verbs if v['v1'].lower() == exact_search.lower()]
+    elif prefix_search:
+        filtered_verbs = [v for v in filtered_verbs if v['v1'].lower().startswith(prefix_search.lower())]
+
+    # Show matching verbs
+    if not filtered_verbs:
+        st.info("No verbs found.")
+    else:
+        for verb in filtered_verbs:
+            st.markdown(f"""
+            #### ✅ {verb['v1'].capitalize()} — {verb['v2']} — {verb['v3']} — {verb['ing']} — {verb['telugu_meaning']}
+
+            - **Example (EN)**: {verb['example_en']}
+            - **ఉదాహరణ (TE)**: {verb['example_te']}
+            """)
+            st.divider()
+
+
+
     
