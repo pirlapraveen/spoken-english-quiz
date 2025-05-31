@@ -31,9 +31,11 @@ st.markdown(
 
     /* Input fields */
     input, textarea {
-        background-color: #f0f8ff !important;
-        border-radius: 8px;
+    background-color: #f0f8ff !important;
+    color: #000 !important;     /* Add this line */
+    border-radius: 8px;
     }
+
 
     /* Headers and subtitles */
     h1, h2, h3 {
