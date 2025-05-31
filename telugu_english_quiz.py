@@ -143,9 +143,9 @@ st.markdown(
 # Login credentials
 credentials = {
     "admin": "admin123",
-    "greeshma": "greeshma@767"
-    "Ganesh": "ganesh@767"
-    "Vinay": "vinay@467"
+    "greeshma": "greeshma@767",
+    "ganesh": "ganesh@767",
+    "vinay": "vinay@467"
    
 }
 
