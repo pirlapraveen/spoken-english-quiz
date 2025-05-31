@@ -7,6 +7,49 @@ from data.conjunction_sentences import conjunction_sentences
 # ✅ THIS MUST BE FIRST Streamlit command
 st.set_page_config(page_title="Praveen Spoken English", layout="centered")
 
+#login page button styling
+st.markdown("""
+<style>
+/* For Streamlit buttons */
+.stButton > button {
+    background-color: #000000 !important;  /* black bg */
+    color: #ffffff !important;             /* white text */
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3) !important;
+    transition: background-color 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+/* Hover effect */
+.stButton > button:hover {
+    background-color: #222222 !important;
+}
+
+/* For form buttons (input type=submit, button inside forms) */
+input[type=submit], button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3) !important;
+    transition: background-color 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: #222222 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
+#after login  page button styling
 st.markdown("""
 <style>
 /* Buttons with black background, white text, padding, and border radius */
@@ -101,6 +144,9 @@ st.markdown(
 credentials = {
     "admin": "admin123",
     "greeshma": "greeshma@767"
+    "Ganesh": "ganesh@767"
+    "Vinay": "vinay@467"
+   
 }
 
 # Initialize login session state
