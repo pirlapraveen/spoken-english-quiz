@@ -7,6 +7,54 @@ from data.conjunction_sentences import conjunction_sentences
 # ✅ THIS MUST BE FIRST Streamlit command
 st.set_page_config(page_title="Praveen Spoken English", layout="centered")
 
+st.markdown(
+    """
+    <style>
+    /* App background */
+    .stApp {
+        background: linear-gradient(to right, #e0f7fa, #ffffff);
+        color: #333;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Sidebar background */
+    section[data-testid="stSidebar"] {
+        background-color: #d1f0ff;
+    }
+
+    /* Buttons */
+    button[kind="primary"] {
+        background-color: #007ACC !important;
+        color: white !important;
+        border-radius: 10px;
+    }
+
+    /* Input fields */
+    input, textarea {
+        background-color: #f0f8ff !important;
+        border-radius: 8px;
+    }
+
+    /* Headers and subtitles */
+    h1, h2, h3 {
+        color: #004d66;
+    }
+
+    /* Custom divider */
+    hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #00C9A7, #FFD700);
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 # Login credentials
 credentials = {
@@ -77,39 +125,39 @@ tense_info = {
 
 
 
-# Custom CSS for blinking text
 st.markdown("""
     <style>
-    .blinking-text {
-        animation: blinker 2s linear infinite;
-        color: #007ACC;
+    .gradient-text {
         font-size: 32px;
         font-weight: bold;
         text-align: center;
         margin-top: 30px;
+        background: linear-gradient(-45deg, #007ACC, #00C9A7, #FFD700, #FF69B4);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 5s ease infinite;
     }
 
-    @keyframes blinker {
-        50% {
-            opacity: 0;
-        }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     .phone-number {
-        font-size: 20px;
-        color: #333;
         text-align: center;
-        margin-top: 20px;
+        font-size: 18px;
+        color: #444;
+        margin-top: 10px;
     }
     </style>
 
-    <div class="blinking-text">Welcome to Praveen Spoken English</div>
+    <div class="gradient-text">Welcome to Praveen Spoken English</div>
     <div class="phone-number">📞 Contact: 8248268056</div>
 """, unsafe_allow_html=True)
 
-# Initialize page navigation state
-if "page" not in st.session_state:
-    st.session_state.page = "home"
+
 
 # Navigation logic
 def go_to(page_name):
