@@ -7,6 +7,18 @@ from data.conjunction_sentences import conjunction_sentences
 # ✅ THIS MUST BE FIRST Streamlit command
 st.set_page_config(page_title="Praveen Spoken English", layout="centered")
 
+st.markdown("""
+<style>
+input, textarea {
+  color: black !important;
+  background-color: white !important;
+}
+label {
+  color: black !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.markdown(
     """
     <style>
