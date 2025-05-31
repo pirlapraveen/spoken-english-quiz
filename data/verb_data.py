@@ -1,3 +1,4 @@
+
 class Verb:
     def __init__(self, v1, v2, v3, ing, telugu_meaning, example_en, example_te):
         self.v1 = v1
@@ -20,7 +21,7 @@ class Verb:
         }
 
 # Define your verbs here
-data = [
+verbs = [
     Verb("accept", "accepted", "accepted", "accepting", "అంగీకరించు", "I accept the task every day.", "నేను ప్రతి రోజు పని అంగీకరించు చేస్తాను."),
     Verb("achieve", "achieved", "achieved", "achieving", "సాధించు", "I achieve the task every day.", "నేను ప్రతి రోజు పని సాధించు చేస్తాను."),
     Verb("act", "acted", "acted", "acting", "నటించు", "I act the task every day.", "నేను ప్రతి రోజు పని నటించు చేస్తాను."),
